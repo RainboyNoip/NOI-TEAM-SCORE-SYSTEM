@@ -1,0 +1,9 @@
+# 文章的路径
+base_dir: /home/rainboy/mycode/pcs-data/_article
+#全体上传的时候略过的文件夹或文件名
+exclude:
+  - ._evil
+  - readme.md
+  - _drafts
+server_url: http://192.168.20.250:3000
+key: mytoken
