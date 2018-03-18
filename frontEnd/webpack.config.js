@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -72,9 +73,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new HtmlWebpackPlugin({
       favicon:'./src/assets/favicon.ico',
-      title:'pcs系统',
+      title:'积分系统',
       template:'__index.html',
       inject:'false',
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from:'./static/loading.gif' }
+    ])
   ])
 }

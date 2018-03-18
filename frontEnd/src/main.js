@@ -8,6 +8,8 @@ import store from './vuex/index.js'
 
 Vue.use(iView);
 
+/* 删除loading.gif */
+document.getElementById("loading").setAttribute("style","display:none")
 
 new Vue({
   el: '#app',
