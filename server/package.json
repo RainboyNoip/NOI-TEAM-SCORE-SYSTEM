@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
+    "socket.io":"^2.0.4",
     "body-parser": "~1.17.1",
     "cors": "^2.8.4",
     "debug": "~2.6.3",
