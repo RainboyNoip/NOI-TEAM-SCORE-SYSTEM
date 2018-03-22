@@ -5,6 +5,11 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
+  externals:{
+    iview:"iview",
+    vue:"Vue",
+    "socket.io-client":"io"
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath:process.env.NODE_ENV==='production'?'/':'/dist/',
@@ -63,7 +68,6 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
       compress: {
         warnings: false
       }
@@ -77,6 +81,10 @@ if (process.env.NODE_ENV === 'production') {
       template:'__index.html',
       inject:'false',
     }),
+    //new webpack.DllReferencePlugin({
+      //context:__dirname,
+      //manifest:require('./dist/vendors-manifest.json')
+    //}),
     new CopyWebpackPlugin([
       { from:'./static/loading.gif' }
     ])
