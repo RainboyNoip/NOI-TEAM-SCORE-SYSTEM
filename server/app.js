@@ -2,12 +2,16 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var compression = require('compression');
 
 var md5  = require('md5')
 
 var cors = require('cors')
 
 var app = express();
+app.use(compression())
+
+
 var server = require('http').Server(app);
 
 // uncomment after placing your favicon in /public
