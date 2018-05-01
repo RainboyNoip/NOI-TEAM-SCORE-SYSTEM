@@ -38,7 +38,10 @@ function connect(socket){
   socket.on(ADDSCORE,async function(data){ //查找与修改
     // 批量修改 data.name type is Array
     //await M['student'].update({$in:{_id:data.name}},{'$inc':{data.score}})
-    await M['student'].update({_id:{$in:data.name}},{'$inc':{score:data.score}})
+    debug('加分人员:',data.name)
+    //await M['student'].update({_id:{$in:data.name}},{'$inc':{score:data.score}})
+    for(i=0;i<data.name.length;i++)
+      await M['student'].update({_id:data.name[i]},{'$inc':{score:data.score}})
     //历史
     for(let i = 0 ;i < data.name.length;i++){
       await M['history'].create({name:data.name[i],

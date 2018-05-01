@@ -1,3 +1,14 @@
+## 使用使用
+
+### 后台server
+
+```bash
+npm i
+```
+
+```bash
+nohup node app.js >/dev/null &
+```
 ## 如何调试
 ## 实现的功能
 

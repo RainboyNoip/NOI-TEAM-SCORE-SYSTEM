@@ -75,8 +75,7 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    new HtmlWebpackPlugin({
-      favicon:'./src/assets/favicon.ico',
+    new HtmlWebpackPlugin({ favicon:'./src/assets/favicon.ico',
       title:'积分系统',
       template:'__index.html',
       inject:'false',
